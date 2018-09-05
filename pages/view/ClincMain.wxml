@@ -1,0 +1,47 @@
+<!--pages/view/ClincMain.wxml-->
+<!-- 主要实现,页面显示当前新闻/资讯,类似公众号形式 -->
+<!-- 下面是Tag模式,按压到预约界面 -->
+<!-- 导航栏可以在app.json下面设置为custom然后在此页面设计自己的导航栏 -->
+<view class='swipepage'>
+  <swiper autoplay='true' indicator-dots='true' interval='3000' class='swiper1'>
+    <swiper-item>
+      <image src='/image/ClincMain/BB_heart_handled.png' class='swiper-image'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/image/ClincMain/BB_lovely_handled.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/image/ClincMain/BB_sleep2_handled.png'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class='news_post'>
+  <view class='post_header'>
+    <text>2018/11/11 12:00:00</text>
+  </view>
+  <image src='/image/TestUsing/a.png'></image>
+  <view class='inner_news_post'>
+    <text>测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据</text>
+  </view>
+</view>
+
+<view class='news_post'>
+  <view class='post_header'>
+    <text>2018/11/11 12:00:00</text>
+  </view>
+  <image src='/image/TestUsing/a.png'></image>
+  <view class='inner_news_post'>
+    <text>测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据</text>
+  </view>
+</view>
+
+<view class='news_post'>
+  <view class='post_header'>
+    <text>2018/11/11 12:00:00</text>
+  </view>
+  <image src='/image/TestUsing/a.png'></image>
+  <view class='inner_news_post'>
+    <text>测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据</text>
+  </view>
+</view>

@@ -1,0 +1,159 @@
+/* pages/DoctorView/DoctorView.wxss */
+
+page {
+  background-color: #eee;
+  font-family: Microsoft-Yahei;
+}
+
+.searchPanel{
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  height: 40rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #999;
+}
+.searchPanel input{
+  margin-left: 20rpx;
+  width: 100%;
+}
+
+.InformationHeader {
+  display: flex;
+  flex-direction: row;
+  height: 50rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.InformationHeader text {
+  margin: auto;
+  font-size: 30rpx;
+}
+
+.HintView {
+  height: 40rpx;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20rpx;
+}
+
+.HintView text {
+  font-size: 25rpx;
+  line-height: 40rpx;
+  color: rgb(233, 74, 74);
+}
+
+.DoctorContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+.DoctorContainer image {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50rpx;
+  margin-top: 10rpx;
+}
+
+.DoctorDetail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  margin-top: 13rpx;
+  border-bottom: 1px solid #666;
+  padding-bottom: 20rpx;
+  font-size: 35rpx;
+}
+
+.DoctorTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.DoctorTitle view {
+  display: flex;
+  flex-direction: row;
+}
+
+.SpecialTitle {
+  margin-left: 10rpx;
+  border: 1px solid blue;
+  border-radius: 20rpx;
+  background-color: blue;
+  color: white;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+/* part 2 */
+
+.GoodPart {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.GoodPart view {
+  border: 2px solid #999;
+  border-radius: 30rpx;
+  margin-right: 8rpx;
+  margin-top: 8rpx;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+  color: #666;
+}
+
+/* part 3 */
+
+.CareerAndCost {
+  margin-top: 10rpx;
+}
+
+.CareerAndCost text {
+  color: #333;
+}
+
+/* part 4 */
+
+.AvailableTimeSlot {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* .AvailableTimeSlot view { */
+
+.TimeSlotItem {
+  border: 2px solid green;
+  border-radius: 15rpx;
+  margin-right: 8rpx;
+  margin-top: 8rpx;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+  color: white;
+  background: green;
+  width: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+.TimeSlotItemClicked {
+  border: 2px solid gold;
+  border-radius: 15rpx;
+  margin-right: 8rpx;
+  margin-top: 8rpx;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+  color: white;
+  background: gold;
+  width: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.ClickTime {
+  background-color: lightblue;
+}
+
+.AvailableTimeSlot view text {
+  margin: auto;
+}

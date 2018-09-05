@@ -1,0 +1,82 @@
+<!--pages/DoctorDetail/DoctorDetail.wxml-->
+<view class='BackgroundPhoto'>
+  <image src='/image/Pic/BackImage.png'></image>
+</view>
+
+<view class='HeaderPhoto'>
+  <image src='/image/TestUsing/HeadPhoto2.png'></image>
+  <text>张三</text>
+  <view>
+    <text>儿童保健</text>
+  </view>
+</view>
+
+<view class='major'>
+  <view>
+    <text>常见病</text>
+  </view>
+</view>
+
+<view class='calendar'>
+  <view class='calendarIntoView'>
+    <view>
+      <view class="nonClickShow {{currentDisplayTab=='week0'?'clickShow':false}}" data-into="week0" catchtap='onTapIntoView'>今周</view>
+      <view class="nonClickShow {{currentDisplayTab=='week1'?'clickShow':false}}" data-into="week1" catchtap='onTapIntoView'>下周</view>
+      <view class="nonClickShow {{currentDisplayTab=='week2'?'clickShow':false}}" data-into="week2" catchtap='onTapIntoView'>下下周</view>
+    </view>
+  </view>
+  <view class='calendar_header'>
+    <text>日</text>
+    <text>一</text>
+    <text>二</text>
+    <text>三</text>
+    <text>四</text>
+    <text>五</text>
+    <text>六</text>
+  </view>
+</view>
+<scroll-view class="scroll-view-container" scroll-x="true" scroll-with-animation="true" bindscroll="catchScrolling" scroll-into-view="{{currentWeekView}}" bindtouchstart="touchStartPointX" bindtouchend="touchEndPointX">
+
+  <view id="week0" class="scroll-view-item">
+    <view class='calendar_date'>
+      <view wx:for="{{index_array_row1}}" wx:for-index="idx" class="{{_num!=idx?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx}}" data-duty="{{duty_array_row1[idx]['Status']}}"  bindtap='onClickBtn'>
+        <text class="{{_num!=idx?'btn_plain_text':'btn_plain_text_click'}}  {{idx<today_weekday?'disable_plain_text_click':'default_wxss'}}">{{item}}</text>
+        <view class="DutyTag {{duty_array_row1[idx]['Status']==0?'DutyTagDisable':''}} {{duty_array_row1[idx]['Status']==1?'DutyTagAvailable':''}} {{duty_array_row1[idx]['Status']==2?'DutyTagFull':''}}"  wx:if="{{idx>=today_weekday}}">
+          <text>{{duty_array_row1[idx]["Display"]}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view id="week1" class="scroll-view-item">
+    <view class='calendar_date'>
+      <view wx:for="{{index_array_row2}}" wx:for-index="idx" class="{{_num!=idx+7?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx+7}}" data-duty="{{duty_array_row2[idx]['Status']}}" bindtap='onClickBtn'>
+        <text class="{{_num!=idx+7?'btn_plain_text':'btn_plain_text_click'}}">{{item}}</text>
+        <view class="DutyTag {{duty_array_row2[idx]['Status']==0?'DutyTagDisable':''}} {{duty_array_row2[idx]['Status']==1?'DutyTagAvailable':''}} {{duty_array_row2[idx]['Status']==2?'DutyTagFull':''}}">
+          <text>{{duty_array_row2[idx]["Display"]}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view id="week2" class="scroll-view-item">
+    <view class='calendar_date'>
+      <view wx:for="{{index_array_row3}}" wx:for-index="idx" class="{{_num!=idx+14?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx+14}}" data-duty="{{duty_array_row3[idx]['Status']}}" bindtap='onClickBtn'>
+        <text class="{{_num!=idx+14?'btn_plain_text':'btn_plain_text_click'}} {{idx>=today_weekday?'disable_plain_text_click':'default_wxss'}}">{{item}}</text>
+        <view class="DutyTag {{duty_array_row3[idx]['Status']==0?'DutyTagDisable':''}} {{duty_array_row3[idx]['Status']==1?'DutyTagAvailable':''}} {{duty_array_row3[idx]['Status']==2?'DutyTagFull':''}}" wx:if="{{idx<today_weekday}}">
+          <text>{{duty_array_row3[idx]["Display"]}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+
+<view class='intro_dr'>
+  <view class='intro_header'>
+    <text>医生介绍</text>
+  </view>
+  <view class='intro_detail'>
+    <text>原国家测试医院测试科测试主治医生编号002\n国家特级医生\n收费: 450元/次</text>
+  </view>
+</view>

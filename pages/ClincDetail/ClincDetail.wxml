@@ -1,0 +1,47 @@
+<!--pages/ClincDetail/ClincDetail.wxml-->
+<view class='Hospital_Summary'>
+  <view class='Summary_image'>
+    <image src='../../image/TestUsing/TestView01.png'></image>
+  </view>
+  <view class='Summary_Content'>
+    <text>{{HospitalTitle}}</text>
+    <text style='color: red;' space='ensp'>门诊: 周一~周日 8:30~17:30</text>
+  </view>
+</view>
+
+<view class='AddrPhone'>
+  <view class='Address' catchtap='onClickAddress'>
+    <image src='../../image/icon/location_s.png'></image>
+    <view>
+      <text>测试地址测试地址测试地址测试地址测试地址测试地址测试地址</text>
+    </view>
+  </view>
+
+  <view class='Phone' catchtap='onClickPhoneCall'>
+    <image src='../../image/icon/PhoneIcon.png'></image>
+    <view>
+      <text>(0755)12345678</text>
+    </view>
+  </view>
+</view>
+
+<view class='ServiceContainer'>
+  <text>服务项目</text>
+  <view class='ServiceContainerList'>
+    <text>项目A, BB, Cust, Douban, E, Function, Gimp, Hos, I</text>
+  </view>
+</view>
+
+<view class='ServiceContainer'>
+  <text>服务语言</text>
+  <view class='ServiceContainerList'>
+    <text>中文,英语,日语,法语</text>
+  </view>
+</view>
+
+<view class='ServiceContainer'>
+  <text>乘车路线</text>
+  <view class='ServiceContainerList'>
+    <text>路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试</text>
+  </view>
+</view>

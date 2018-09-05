@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/bookPage/ClinicBooking",
+    "pages/DoctorView/DoctorView",
+    "pages/view/ClincMain",
+    "pages/ClincDetail/ClincDetail",
+    "pages/Map/MapController",
+    "pages/DoctorDetail/DoctorDetail",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#123456",
+    "navigationBarTitleText": "XX医疗",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "blue",
+    "backgroundColor": "#FFEEEE",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/view/ClincMain",
+        "iconPath": "image/icon/icon_self.png",
+        "selectedIconPath": "image/icon/icon_self.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/bookPage/ClinicBooking",
+        "iconPath": "image/icon/icon_book.png",
+        "selectedIconPath": "image/icon/icon_book.png",
+        "text": "预约就诊"
+      }
+    ]
+  }
+}

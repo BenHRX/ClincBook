@@ -1,0 +1,47 @@
+<!--pages/DoctorView/DoctorView.wxml-->
+<view wx:if="{{SearchDoctor}}" class='searchPanel'>
+  <icon class='SearchIcon-style' type='search' size='25'></icon>
+  <input class='SearchInput' type='text' placeholder='搜索医生'></input>
+</view>
+<view wx:else class='InformationHeader'>
+  <text>{{ChosenDate}},{{ChosenDepartment}}</text>
+</view>
+
+<view class='HintView'>
+  <text>请选择预约的医生<text style='color: #666'>(按照姓名拼音首字拼音排序)</text></text>
+</view>
+
+<!-- Below is the doctor list section for loop -->
+<view class='DoctorContainer' wx:for="{{serverDataArray}}" wx:for-item="DoctorInfo" wx:for-index="DoctorIndex" wx:if="{{!BookingShow}}" bindtap='onClickDoctor'>
+  <view class='DoctorImageView'>
+    <image src="{{DoctorInfo['Photo']}}"></image>
+  </view>
+
+  <view class='DoctorDetail'>
+    <view class='DoctorTitle'>
+      <view>
+        <text>{{DoctorInfo['name']}}</text>
+        <view class='SpecialTitle'>{{DoctorInfo['Mark']}}</view>
+      </view>
+      <text>{{DoctorInfo['Department']}}</text>
+    </view>
+    <view class='GoodPart'>
+      <view wx:for="{{DoctorInfo['Major']}}" wx:for-item="majorItem">{{majorItem}}</view>
+    </view>
+    <view class='CareerAndCost'>
+      <text>{{DoctorInfo['Career']}}</text>
+    </view>
+    <view class='AvailableTimeSlot'>
+      <view class="{{idx==click_id&&DoctorIndex==Doctor?'TimeSlotItemClicked':'TimeSlotItem'}}" wx:for="{{DoctorInfo['TimeSlot']}}" wx:for-index="idx" wx:for-item="time" data-id="{{idx}}" data-dr="{{DoctorIndex}}" data-drname="{{DoctorInfo['name']}}" catchtap='onClickBookTime'>
+        <text>{{time}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='bookingConfirm' wx:if="{{BookingShow}}">
+  <view style='width: 50%; height: 600rpx; margin:auto;'>
+    <text>以下数据为测试使用\n回车测试\n123数字测试
+    </text>
+  </view>
+</view>

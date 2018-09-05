@@ -1,0 +1,80 @@
+<!-- 仿制网页 -->
+<view class='SearchPanel'>
+  <icon class='SearchIcon-style' type='search' size='25'></icon>
+  <input class='SearchInput' type='text' placeholder='输入查找的医生' bindtap='onTapSearch'></input>
+  <view class='CitySearch'>
+    <image class='PositionMark' src='../../image/icon/posMark.png'>pic</image>
+    
+    <picker class='pickerClass' bindchange="bindPickerChange" value="{{index}}" range="{{cityArray}}">
+      <text class='PositionText'>{{CityChosen}}</text>
+    </picker>
+     
+    <image class='PullDownMark' src='../../image/icon/pulldown.png'>pic</image>
+  </view>
+</view>
+
+<view class='calendar_show'>
+  <view class='header_date'>
+    <text>{{Date_string}}</text>
+  </view>
+  <view class='calendar_header'>
+    <text>日</text>
+    <text>一</text>
+    <text>二</text>
+    <text>三</text>
+    <text>四</text>
+    <text>五</text>
+    <text>六</text>
+  </view>
+  <view class='calendar_date'>
+    <!-- <view wx:for="{{index_array_row1}}" wx:for-index="idx" class="{{_num!=idx?'btn_like_view':'btn_like_view_click'}} " data-num="{{idx}}" bindtap='onClickBtn'> -->
+    <view wx:for="{{index_array_row1}}" wx:for-index="idx" class="{{_num!=idx?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx}}" bindtap='onClickBtn'>
+      <text class="{{_num!=idx?'btn_plain_text':'btn_plain_text_click'}}  {{idx<today_weekday?'disable_plain_text_click':'default_wxss'}}">{{item}}</text>
+    </view>
+  </view>
+  <view class='calendar_date'>
+    <view wx:for="{{index_array_row2}}" wx:for-index="idx" class="{{_num!=idx+7?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx+7}}" bindtap='onClickBtn'>
+      <text class="{{_num!=idx+7?'btn_plain_text':'btn_plain_text_click'}}">{{item}}</text>
+    </view>
+  </view>
+  <view class='calendar_date'>
+    <view wx:for="{{index_array_row3}}" wx:for-index="idx" class="{{_num!=idx+14?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx+14}}" bindtap='onClickBtn'>
+      <text class="{{_num!=idx+14?'btn_plain_text':'btn_plain_text_click'}} {{idx>=today_weekday?'disable_plain_text_click':'default_wxss'}}">{{item}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='Department_view'>
+  <view style='padding-top: 20rpx; font-size: 25rpx; background-color: #EEE;'>服务类别</view>
+  <view class='Department_list' wx:for="{{department_list}}" wx:for-index="id_row" wx:for-item="department_row">
+    <view class="{{department_idx==id_row*4+each?'Department_container_click':'Department_container'}}" wx:for-index="each" wx:for="{{department_row}}" wx:for-item="department" data-click="{{department}}" data-idx="{{id_row*4+each}}" bindtap='onClickDepartment'>
+      <text class='department_text'>{{department}}</text>
+    </view>
+  </view>
+  <view style='font-size: 30rpx; color: green; margin: 20rpx 14rpx 10rpx 14rpx; background-color: #EEE; border-radius: 10rpx; padding-left: 10rpx;'>更多专科: 胃肠镜/生殖内分泌/儿童呼吸专科等</view>
+</view>
+
+<view class='HospitalView'>
+
+  <view>
+    <text style='font-size: 25rpx'>请选择预约诊所<text style='color: red' space='nbsp'>  ({{choseDate}}, {{department_chose}})</text></text>
+  </view>
+
+  <view class='HospitalList'>
+    <view class='Hospital_container' wx:for="{{HospitalData}}" wx:for-index="h_idx" wx:for-item="h_item" data-idx='{{h_idx}}' bindtap='onClickHospital'>
+      <view class='Hospital_image_view'>
+        <image class='Hospital_img' src="{{h_item['h_img']}}"></image>
+      </view>
+
+      <view class='Hospital_summary'>
+        <view class='HospitalHeader'>
+          <text>{{h_item['h_Title']}}</text>
+          <image style='width: 50rpx; height:50rpx;' src='../../image/icon/posMark.png' data-idx='{{h_idx}}' catchtap='onHosipitalPosition'></image>
+        </view>
+        <view class='HospitalDetail'>
+          <text>{{h_item['h_Summary']}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

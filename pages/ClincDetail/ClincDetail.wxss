@@ -1,0 +1,91 @@
+/* pages/ClincDetail/ClincDetail.wxss */
+
+page {
+  background-color: #eee;
+  height: 100%;
+}
+
+page font {
+  font-family: Microsoft-Yahei;
+}
+
+.Hospital_Summary {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+
+.Summary_image {
+  height: 170rpx;
+}
+
+.Summary_image image {
+  margin-top: 15rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+}
+
+.Summary_Content {
+  display: flex;
+  flex-direction: column;
+  height: 170rpx;
+  margin-left: 25rpx;
+}
+
+.Summary_Content text {
+  /* display: table-cell;
+  vertical-align: middle; *//* line-height: 85rpx; */
+  font-size: 32rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Phone and address exist place */
+
+.AddrPhone {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+
+.AddrPhone view {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 10rpx;
+  background-color: #fff;
+  border-bottom: solid 1rpx #eee;
+}
+
+.AddrPhone image {
+  height: 70rpx;
+  width: 70rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10rpx;
+}
+
+.AddrPhone text {
+  font-size: 30rpx;
+  line-height: 70rpx;
+  padding: 10rpx 10rpx 10rpx 10rpx;
+}
+
+/* 下面的服务协议 */
+
+.ServiceContainer {
+  margin-top: 20rpx;
+  background-color: #eee;
+}
+
+.ServiceContainer text {
+  font-size: 30rpx;
+  color: #222;
+}
+
+.ServiceContainer view {
+  background-color: #fff;
+  padding: 10rpx 10rpx 10rpx 30rpx;
+}

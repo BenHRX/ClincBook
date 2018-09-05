@@ -1,0 +1,208 @@
+/* pages/DoctorDetail/DoctorDetail.wxss */
+page{
+  background-color: #EEE;
+  font-size: 33rpx;
+  font-family: Microsoft-Yahei;
+}
+
+.BackgroundPhoto {
+  height: 400rpx;
+  width: 100%;
+  display: flex;
+  background-image: "/image/Pic/BackImage.png";
+  filter: blur(30rpx);
+}
+
+.BackgroundPhoto image {
+  height: 400rpx;
+  width: 750rpx;
+}
+
+.HeaderPhoto {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 999;
+  left: 280rpx;
+  top: 75rpx;
+  /* margin: auto; */
+  color: #fff;
+}
+
+.HeaderPhoto image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+}
+
+.HeaderPhoto text {
+  margin: auto;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.HeaderPhoto view {
+  margin: auto;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+  font-size: 26rpx;
+  white-space: nowrap;
+  border: 1rpx solid #EEE;
+  border-radius: 10rpx;
+}
+
+/*Good at section*/
+
+.major {
+  margin-top: 35rpx;
+  background-color: #fff;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+}
+
+.major view {
+  border: 1px solid #999;
+  width: 150rpx;
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 25rpx;
+}
+
+.major view text {
+  margin: auto;
+}
+
+/* Calendar part */
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+  background-color: #fff;
+}
+.calendar_header{
+  background-color: #EEE;
+  font-size: 28rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+}
+.calendarIntoView {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid #999;
+  margin-top: 20rpx;
+}
+.calendarIntoView view {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+.nonClickShow {
+  /* border-bottom: 1px solid #999; */
+  padding: 5rpx 20rpx 5rpx 20rpx;
+  color: #999;
+}
+.clickShow {
+  /* for the into view section now being focus */
+  border-bottom: 2px solid blue;
+  color: blue;
+}
+/*Calendar sub-part*/
+.scroll-view-container{
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  height: 120rpx;
+  width: 100%;
+  background-color: #fff;
+}
+.scroll-view-item{
+  display: inline-block;
+  width: 100%;
+  height: 120rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.DutyTag{
+  /* border: 1rpx solid #EEE; */
+  font-size: 20rpx;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  color: white;
+  padding: 5rpx 5rpx 5rpx 5rpx;
+}
+.DutyTagAvailable{
+  background-color: green;
+}
+.DutyTagDisable{
+  background-color: #666;
+}
+.DutyTagFull{
+  background-color: orangered;
+}
+
+/* Real Calendar show  */
+.calendar_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  margin-top: 15rpx;
+}
+
+.calendar_date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  margin-top: 15rpx;
+}
+
+.btn_like_view {
+  border-radius: 50%;
+  background-color: #fff;
+  height: 50rpx;
+  width: 50rpx;
+  text-align: center;
+}
+
+.btn_like_view_click {
+  border-radius: 50%;
+  background-color: rgb(233, 76, 76);
+  height: 50rpx;
+  width: 50rpx;
+  text-align: center;
+}
+
+.btn_plain_text {
+  color: black;
+}
+
+.btn_plain_text_click {
+  color: white;
+}
+
+.disable_plain_text_click {
+  color: gray;
+}
+
+
+/* Doctor introduction part */
+.intro_dr{
+  margin-top: 20rpx;
+}
+.intro_header{
+  padding-left: 20rpx;
+}
+.intro_detail{
+  margin-top: 10rpx;
+  background-color: #fff;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+}

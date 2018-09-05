@@ -1,0 +1,49 @@
+/* pages/view/ClincMain.wxss */
+/* 定义页面的颜色只能在这里定义 */
+page{
+  height: 100%;
+  background-color: #EEEEEE;
+}
+
+.swiper1 image {
+  width: 750rpx;
+  height: 300rpx;
+}
+
+/*--------- post summary use part -------*/
+
+.news_post {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  padding-top: 10rpx;
+  border-top: 1px solid #999;
+}
+
+.post_header{
+  padding-bottom: 10rpx;
+}
+.post_header text{
+  font-family: Microsoft-Yahei;
+  color: #AAA;
+}
+
+.news_post image {
+  width: 730rpx;
+  height: 320rpx;
+}
+
+.inner_news_post {
+  margin-top: 10rpx;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+}
+
+.inner_news_post text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30rpx;
+}
+
+/*----------          end  --------------*/
