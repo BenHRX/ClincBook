@@ -28,7 +28,7 @@
 <view class='ServiceContainer'>
   <text>服务项目</text>
   <view class='ServiceContainerList'>
-    <text>项目A, BB, Cust, Douban, E, Function, Gimp, Hos, I</text>
+    <text>项目A, BB, Cust, Douban, E, Function, Gimp, Hos, I, F</text>
   </view>
 </view>
 
