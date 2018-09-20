@@ -77,6 +77,6 @@
     <text>医生介绍</text>
   </view>
   <view class='intro_detail'>
-    <text>原国家测试医院测试科测试主治医生编号002\n国家特级医生\n收费: 450元/次</text>
+    <text>原国家测试医院测试科测试主治医生编号002\n国家特级医生\n收费: 450元/次\n 收费: 450元/次</text>
   </view>
 </view>

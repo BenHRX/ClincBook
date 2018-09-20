@@ -172,7 +172,6 @@ page {
 .Hospital_image_view {
   margin-left: 10rpx;
   margin-right: 10rpx;
-  height: 200rpx;
 }
 
 .Hospital_img {
@@ -184,10 +183,12 @@ page {
 
 .Hospital_summary {
   border-bottom: 2px solid #999;
-  height: 200rpx;
+  /* height: 200rpx; */
+  min-height: 150rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
   width: 100%;
+  padding-bottom: 20rpx;
 }
 
 .Hospital_summary text {
@@ -212,7 +213,4 @@ page {
 .HospitalHeader image {
   display: table-cell;
   vertical-align: middle;
-}
-
-.HospitalDetail{
 }

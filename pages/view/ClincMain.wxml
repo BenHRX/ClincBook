@@ -5,13 +5,14 @@
 <view class='swipepage'>
   <swiper autoplay='true' indicator-dots='true' interval='3000' class='swiper1'>
     <swiper-item>
-      <image src='/image/ClincMain/BB_heart_handled.png' class='swiper-image'></image>
+    <!-- /image/ClincMain/BB_heart_handled.png -->
+      <image src='http://localhost/ControlSystem/image/BB_heart_handled.png' class='swiper-image'></image>
     </swiper-item>
     <swiper-item>
-      <image src='/image/ClincMain/BB_lovely_handled.png'></image>
+      <image src='http://localhost/ControlSystem/image/big_image/BB_lovely_handled.png'></image>
     </swiper-item>
     <swiper-item>
-      <image src='/image/ClincMain/BB_sleep2_handled.png'></image>
+      <image src='http://localhost/ControlSystem/image/big_image/BB_sleep2_handled.png'></image>
     </swiper-item>
   </swiper>
 </view>
