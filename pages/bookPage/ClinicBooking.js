@@ -29,7 +29,7 @@ Page({
     this.formatCalendar();
     this.loadServerCities();
     this.serviceLoad();
-    this.loadHospitalData();
+    // this.loadHospitalData(); 删除的原因见函数里面解释
   },
 
   /**
@@ -217,30 +217,28 @@ Page({
         tmp_list = [];
       }
     }
-    tmp_full_list.push(tmp_list);
-    tmp_list = [];
-    for (var x in tmp_full_list) {
-      console.log("List:" + tmp_full_list[x]);
-    }
 
     // Fetch the hospital list in this city
-    var tmpServerData = [];
-    for (var idy in res.data) {
-      if (tmpServerData.filter(element => element['h_Title'] == res.data[idy]['name']).length == 0) {
-        var tmp_hospital_detail = {
-          "h_img": app_globaldata.g_base_image_url + res.data[idy]['view_photo'],
-          "h_Title": res.data[idy]['name'],
-          "h_Summary": res.data[idy]['address'] + "\n" + res.data[idy]['hospital_summary'],
-        };
-        tmpServerData.push(tmp_hospital_detail);
-      }
-    }
+    // var tmpServerData = [];
+    // for (var idy in res.data) {
+    //   if (tmpServerData.filter(element => element['h_Title'] == res.data[idy]['name']).length == 0) {
+    //     var tmp_hospital_detail = {
+    //       "h_img": app_globaldata.g_base_image_url + res.data[idy]['view_photo'],
+    //       "h_Title": res.data[idy]['name'],
+    //       "h_Summary": res.data[idy]['address'] + "\n" + res.data[idy]['hospital_summary'],
+    //     };
+    //     tmpServerData.push(tmp_hospital_detail);
+    //   }
+    // }
 
+    console.log("Now the department_chose is " + services[0]);
     this.setData({
       department_list: tmp_full_list,
       department_chose: services[0],
-      HospitalData: tmpServerData,
+      // HospitalData: tmpServerData,
     });
+
+    this.loadHospitalData();
   },
 
   // 对应department click
@@ -252,31 +250,50 @@ Page({
       department_chose: data_click,
       department_idx: dep_idx,
     });
+
+    this.loadHospitalData();
   },
 
   // 医院数据读取
   loadHospitalData: function() {
-    // var tmpServerData = [{
-    //     "h_img": "../../image/TestUsing/TestView01.png",
-    //     "h_Title": "广州医科大学附属第一医院",
-    //     "h_Summary": "广州市沿江路151号(原市总工对面)\n电话：020-83062114",
-    //   },
-    //   {
-    //     "h_img": "../../image/TestUsing/TestView02.png",
-    //     "h_Title": "广州医科大学附属第二医院",
-    //     "h_Summary": "广州市海珠区昌岗东路250号\n咨询电话：86-020-34152282",
-    //   },
-    //   {
-    //     "h_img": "../../image/TestUsing/TestView03.png",
-    //     "h_Title": "广州医科大学附属第三医院",
-    //     "h_Summary": "广州市荔湾区多宝路63号\n邮编：510150",
-    //   }
-    // ];
-    // this.setData({
-    //   HospitalData: tmpServerData,
-    // });
+    var that = this;
+    // 因为Service load函数里面调用了request这个异步函数，所以不可能立刻获得数据
+    // 所以，如果要分开两个函数，只能将loadHospitalData放置于processDetailServerData那里
+    wx.request({
+      url: app_globaldata.g_base_api_url + 'hospital_controller/response_detail_by_department',
+      data: {
+        'city': this.data.CityChosen,
+        'department': this.data.department_chose,
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function(res) {
+        that.processHospitalByDepartment(res);
+      }
+    });
+  },
+  processHospitalByDepartment: function(res) {
+    console.log(res);
+    // Fetch the hospital list in this city and the corresponding service
+    var tmpServerData = [];
+    for (var idy in res.data) {
+      // if (tmpServerData.filter(element => element['h_Title'] == res.data[idy]['name']).length == 0) {
+      var tmp_hospital_detail = {
+        "h_img": app_globaldata.g_base_image_url + res.data[idy]['view_photo'],
+        "h_Title": res.data[idy]['name'],
+        "h_Summary": res.data[idy]['address'] + "\n" + res.data[idy]['hospital_summary'],
+      };
+      tmpServerData.push(tmp_hospital_detail);
+      // }
+    }
+    this.setData({
+      HospitalData: tmpServerData,
+    });
   },
 
+  // Click the hospital view trigger below function
   onClickHospital: function(event) {
     var click = event.currentTarget.dataset.idx;
     console.log("Click Hospital " + click);
