@@ -1,7 +1,7 @@
 <!--pages/DoctorView/DoctorView.wxml-->
 <view wx:if="{{SearchDoctor}}" class='searchPanel'>
   <icon class='SearchIcon-style' type='search' size='25'></icon>
-  <input class='SearchInput' type='text' placeholder='搜索医生'></input>
+  <input class='SearchInput' type='text' placeholder='搜索医生' bindconfirm='onSearchDoctor'></input>
 </view>
 <view wx:else class='InformationHeader'>
   <text>{{ChosenDate}},{{ChosenDepartment}}</text>
@@ -12,7 +12,7 @@
 </view>
 
 <!-- Below is the doctor list section for loop -->
-<view class='DoctorContainer' wx:for="{{serverDataArray}}" wx:for-item="DoctorInfo" wx:for-index="DoctorIndex" wx:if="{{!BookingShow}}" bindtap='onClickDoctor'>
+<view class='DoctorContainer' wx:for="{{serverDataArray}}" wx:for-item="DoctorInfo" wx:for-index="DoctorIndex" wx:if="{{!BookingShow}}" bindtap='onClickDoctor' data-dr_index="{{DoctorIndex}}">
   <view class='DoctorImageView'>
     <image src="{{DoctorInfo['Photo']}}"></image>
   </view>

@@ -350,7 +350,7 @@ Page({
   // 直接单击Search
   onTapSearch: function(event) {
     wx.navigateTo({
-      url: "../DoctorView/DoctorView?hospital=Nil&department=Nil&date=Nil&city=" + this.data.CityChosen + "&search=search_doctor",
+      url: "../DoctorView/DoctorView?hospital=Nil&department=Nil&date=Nil&city=" + this.data.CityChosen + "&date=" + this.data.choseDate + "&search=search_doctor",
     });
   }
 })

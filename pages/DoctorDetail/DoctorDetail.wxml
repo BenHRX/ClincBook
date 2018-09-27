@@ -1,19 +1,37 @@
 <!--pages/DoctorDetail/DoctorDetail.wxml-->
+<!-- Start: This is the cover panel -->
+<view class="cover_shadow_screen" catchtap="hideModal" wx:if="{{showModalStatus}}" catchtouchmove='preventMove'></view>
+<view animation="{{animationData}}" class="flow_attr_box" wx:if="{{showModalStatus}}" catchtouchmove='preventMove'>
+  <view class='FlowViewTitle'>选择预约时段</view>
+  <view class='FlowViewContainer'>
+  <image src='../../image/TestUsing/TestView01.png'/>
+  <view class='ClinicServiceTimeSlot'>
+    <text style='font-size: 25rpx;'>{{doctor_hospital}}</text>
+    <text style='font-size: 22rpx; color: red; margin-top:10rpx;'>{{doctor_department}}</text>
+    <view class='BookingTimeContainer'>
+      <block wx:for="{{chosen_duty_arrangement}}" wx:for-item="time_slot" wx:for-index="index">
+        <view class="BookButton {{clickTimeID==index?'BookButtonClick':'BookButtonNoClick'}}" data-idx='{{index}}' data-value='{{time_slot}}' catchtap='onClickFlowPanelTime'>{{time_slot}}</view>
+      </block>
+    </view>
+  </view>
+  </view>
+</view>
+<!-- End: Cover Panel part end -->
 <view class='BackgroundPhoto'>
-  <image src='/image/Pic/BackImage.png'></image>
+  <image src='{{background_picture}}'></image>
 </view>
 
 <view class='HeaderPhoto'>
-  <image src='/image/TestUsing/HeadPhoto2.png'></image>
-  <text>张三</text>
+  <image src="{{doctor_photo}}"></image>
+  <text>{{doctor_name}}</text>
   <view>
-    <text>儿童保健</text>
+    <text>{{doctor_department}}</text>
   </view>
 </view>
 
 <view class='major'>
-  <view>
-    <text>常见病</text>
+  <view wx:for="{{doctor_major}}" wx:for-item="major_item" wx:for-index="idx">
+    <text>{{major_item}}</text>
   </view>
 </view>
 
@@ -39,9 +57,9 @@
 
   <view id="week0" class="scroll-view-item">
     <view class='calendar_date'>
-      <view wx:for="{{index_array_row1}}" wx:for-index="idx" class="{{_num!=idx?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx}}" data-duty="{{duty_array_row1[idx]['Status']}}"  bindtap='onClickBtn'>
+      <view wx:for="{{index_array_row1}}" wx:for-index="idx" class="{{_num!=idx?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx}}" data-duty="{{duty_array_row1[idx]['Status']}}" catchtap='onClickBtn'>
         <text class="{{_num!=idx?'btn_plain_text':'btn_plain_text_click'}}  {{idx<today_weekday?'disable_plain_text_click':'default_wxss'}}">{{item}}</text>
-        <view class="DutyTag {{duty_array_row1[idx]['Status']==0?'DutyTagDisable':''}} {{duty_array_row1[idx]['Status']==1?'DutyTagAvailable':''}} {{duty_array_row1[idx]['Status']==2?'DutyTagFull':''}}"  wx:if="{{idx>=today_weekday}}">
+        <view class="DutyTag {{duty_array_row1[idx]['Status']==0?'DutyTagDisable':''}} {{duty_array_row1[idx]['Status']==1?'DutyTagAvailable':''}} {{duty_array_row1[idx]['Status']==2?'DutyTagFull':''}}" wx:if="{{idx>=today_weekday}}">
           <text>{{duty_array_row1[idx]["Display"]}}</text>
         </view>
       </view>
@@ -50,7 +68,7 @@
 
   <view id="week1" class="scroll-view-item">
     <view class='calendar_date'>
-      <view wx:for="{{index_array_row2}}" wx:for-index="idx" class="{{_num!=idx+7?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx+7}}" data-duty="{{duty_array_row2[idx]['Status']}}" bindtap='onClickBtn'>
+      <view wx:for="{{index_array_row2}}" wx:for-index="idx" class="{{_num!=idx+7?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx+7}}" data-duty="{{duty_array_row2[idx]['Status']}}" catchtap='onClickBtn'>
         <text class="{{_num!=idx+7?'btn_plain_text':'btn_plain_text_click'}}">{{item}}</text>
         <view class="DutyTag {{duty_array_row2[idx]['Status']==0?'DutyTagDisable':''}} {{duty_array_row2[idx]['Status']==1?'DutyTagAvailable':''}} {{duty_array_row2[idx]['Status']==2?'DutyTagFull':''}}">
           <text>{{duty_array_row2[idx]["Display"]}}</text>
@@ -61,7 +79,7 @@
 
   <view id="week2" class="scroll-view-item">
     <view class='calendar_date'>
-      <view wx:for="{{index_array_row3}}" wx:for-index="idx" class="{{_num!=idx+14?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx+14}}" data-duty="{{duty_array_row3[idx]['Status']}}" bindtap='onClickBtn'>
+      <view wx:for="{{index_array_row3}}" wx:for-index="idx" class="{{_num!=idx+14?'btn_like_view':'btn_like_view_click'}}" data-num="{{idx+14}}" data-duty="{{duty_array_row3[idx]['Status']}}" catchtap='onClickBtn'>
         <text class="{{_num!=idx+14?'btn_plain_text':'btn_plain_text_click'}} {{idx>=today_weekday?'disable_plain_text_click':'default_wxss'}}">{{item}}</text>
         <view class="DutyTag {{duty_array_row3[idx]['Status']==0?'DutyTagDisable':''}} {{duty_array_row3[idx]['Status']==1?'DutyTagAvailable':''}} {{duty_array_row3[idx]['Status']==2?'DutyTagFull':''}}" wx:if="{{idx<today_weekday}}">
           <text>{{duty_array_row3[idx]["Display"]}}</text>
@@ -77,6 +95,6 @@
     <text>医生介绍</text>
   </view>
   <view class='intro_detail'>
-    <text>原国家测试医院测试科测试主治医生编号002\n国家特级医生\n收费: 450元/次\n 收费: 450元/次</text>
+    <text>{{doctor_summary}}</text>
   </view>
 </view>

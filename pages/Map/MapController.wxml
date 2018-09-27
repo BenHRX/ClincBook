@@ -2,9 +2,9 @@
 <!-- <text>pages/Map/MapController.wxml</text> -->
 <map 
 id="map" 
-longitude="113.262228" 
-latitude="23.112248" 
-scale="19" 
+longitude='{{map_longtitude}}'
+latitude='{{map_latitude}}'
+scale='{{map_scale}}'
 iconPath="/image/icon/location.png" 
 show-location 
 style="width: 100%; height: 1200rpx;"

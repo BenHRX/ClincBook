@@ -1,7 +1,7 @@
 <!--pages/ClincDetail/ClincDetail.wxml-->
 <view class='Hospital_Summary'>
   <view class='Summary_image'>
-    <image src='../../image/TestUsing/TestView01.png'></image>
+    <image src='{{hospital_photo}}'></image>
   </view>
   <view class='Summary_Content'>
     <text>{{HospitalTitle}}</text>
@@ -13,14 +13,14 @@
   <view class='Address' catchtap='onClickAddress'>
     <image src='../../image/icon/location_s.png'></image>
     <view>
-      <text>测试地址测试地址测试地址测试地址测试地址测试地址测试地址</text>
+      <text>{{hospital_address}}</text>
     </view>
   </view>
 
   <view class='Phone' catchtap='onClickPhoneCall'>
     <image src='../../image/icon/PhoneIcon.png'></image>
     <view>
-      <text>(0755)12345678</text>
+      <text>{{hospital_phone}}</text>
     </view>
   </view>
 </view>
@@ -28,20 +28,20 @@
 <view class='ServiceContainer'>
   <text>服务项目</text>
   <view class='ServiceContainerList'>
-    <text>项目A, BB, Cust, Douban, E, Function, Gimp, Hos, I, F</text>
+    <text>{{hospital_service}}</text>
   </view>
 </view>
 
 <view class='ServiceContainer'>
   <text>服务语言</text>
   <view class='ServiceContainerList'>
-    <text>中文,英语,日语,法语</text>
+    <text>{{hospital_language}}</text>
   </view>
 </view>
 
 <view class='ServiceContainer'>
   <text>乘车路线</text>
   <view class='ServiceContainerList'>
-    <text>路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试路线测试</text>
+    <text>{{hospital_traffic}}</text>
   </view>
 </view>

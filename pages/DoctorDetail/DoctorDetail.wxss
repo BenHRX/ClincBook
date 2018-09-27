@@ -5,6 +5,77 @@ page{
   font-family: Microsoft-Yahei;
 }
 
+/* Below part is for the cover panel */
+.cover_shadow_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.4;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.flow_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #EEE;
+  padding-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.FlowViewTitle{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 28rpx;
+}
+.FlowViewContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.FlowViewContainer image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.ClinicServiceTimeSlot{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+  padding: 10rpx 10rpx 10rpx 10rpx;
+}
+.BookingTimeContainer{
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.BookButton{
+  font-size: 27rpx;
+  padding: 10rpx 10rpx 10rpx 10rpx;
+  margin-right: 15rpx;
+  border-radius: 20rpx;
+}
+.BookButtonNoClick{
+  background-color: blue;
+  color: white;
+}
+.BookButtonClick{
+  background-color: darkcyan;
+  color: white;
+}
+/* End the Cover Panel */
+
 .BackgroundPhoto {
   height: 400rpx;
   width: 100%;
@@ -22,7 +93,7 @@ page{
   display: flex;
   flex-direction: column;
   position: absolute;
-  z-index: 999;
+  z-index: 888;
   left: 280rpx;
   top: 75rpx;
   /* margin: auto; */
@@ -56,15 +127,17 @@ page{
   margin-top: 35rpx;
   background-color: #fff;
   padding: 20rpx 30rpx 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .major view {
-  border: 1px solid #999;
-  width: 150rpx;
+  border: 2px solid #999;
   border-radius: 30rpx;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  margin-right: 12rpx;
+  margin-top: 8rpx;
+  padding: 5rpx 10rpx 5rpx 10rpx;
   font-size: 25rpx;
 }
 

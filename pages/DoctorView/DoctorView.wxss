@@ -27,7 +27,7 @@ page {
 
 .InformationHeader text {
   margin: auto;
-  font-size: 30rpx;
+  font-size: 26rpx;
 }
 
 .HintView {
@@ -37,7 +37,7 @@ page {
 }
 
 .HintView text {
-  font-size: 25rpx;
+  font-size: 23rpx;
   line-height: 40rpx;
   color: rgb(233, 74, 74);
 }
@@ -62,7 +62,8 @@ page {
   margin-top: 13rpx;
   border-bottom: 1px solid #666;
   padding-bottom: 20rpx;
-  font-size: 35rpx;
+  font-size: 28rpx;
+  width: 100%;
 }
 
 .DoctorTitle {
@@ -81,7 +82,7 @@ page {
   border-radius: 20rpx;
   background-color: blue;
   color: white;
-  font-size: 30rpx;
+  font-size: 27rpx;
   padding-left: 10rpx;
   padding-right: 10rpx;
 }
@@ -108,9 +109,11 @@ page {
 
 .CareerAndCost {
   margin-top: 10rpx;
+  padding-right: 5rpx;
 }
 
 .CareerAndCost text {
+  width: 100%;
   color: #333;
 }
 
