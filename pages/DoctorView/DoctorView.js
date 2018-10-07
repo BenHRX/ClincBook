@@ -252,5 +252,25 @@ Page({
     wx.navigateTo({
       url: '../DoctorDetail/DoctorDetail?doctor=' + doctor_detail['name'] + "&department=" + doctor_detail['Department'] + "&photo=" + doctor_detail['Photo'] + "&userid=" + doctor_detail['user_id'],
     });
+  },
+
+  // 搜寻医生
+  onSearchDoctor: function(event){
+    console.log(event);
+    var that = this;
+    wx.request({
+      url: global_data.g_base_api_url + 'user_controller/search_user_by_name',
+      data: {
+        'city_name': this.data.ChosenCity,
+        'search_name': event.detail.value,
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        that.processPositionDoctorData(res);
+      }
+    });
   }
 })

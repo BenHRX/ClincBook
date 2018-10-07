@@ -1,0 +1,42 @@
+<!--pages/wxUserLogin/wxUserLogin.wxml-->
+<view wx:if="{{Refresh_Manually}}" style='display: flex; flex-direction: column; justify-content: space_around;'>
+  <view style='display: flex; flex-direction: column; margin-top: 250rpx;'>
+    <text style='margin: auto'>Cannot Load Server Data</text>
+    <text style='margin: auto'>Please refresh Manaully</text>
+  </view>
+  <!-- <view class='Refresh_Button' catchtap='onloadRefresh'>Refresh</view> -->
+  <button type='primary' style='margin-top: 40rpx' catchtap='onloadRefresh'>Refresh</button>
+</view>
+
+<form wx:if="{{!Refresh_Manually&&!NoNeedShow}}" bindsubmit="userSubmit">
+  <text wx:if="{{!UserExisted}}">身份注册简易界面></text>
+  <text wx:else>简易登录界面></text>
+  <view style='display: flex; flex-direction: column;'>
+    <view wx:if="{{!UserExisted}}" style='display: flex; flex-direction: row; margin-top:10rpx;'>
+      <text>用户名称: </text>
+      <input name='user_name' type='text' style='background-color: #EEE;'></input>
+    </view>
+    <view style='display: flex; flex-direction: row; margin-top:10rpx;'>
+      <text>用户密码: </text>
+      <input name='user_pwd' type='text' password='true' style='background-color: #EEE;'></input>
+    </view>
+    <view wx:if="{{!UserExisted}}" style='display: flex; flex-direction: row; margin-top:10rpx;'>
+      <text>身份证号: </text>
+      <input name='ID_num' type='text' style='background-color: #EEE;'></input>
+    </view>
+    <view wx:if="{{!UserExisted}}" style='display: flex; flex-direction: row; margin-top:10rpx;'>
+      <text>手机号码: </text>
+      <input name='phone_num' type='text' style='background-color: #EEE;'></input>
+    </view>
+    <view wx:if="{{!UserExisted}}" style='display: flex; flex-direction: row; margin-top:10rpx;'>
+      <text>用户地址: </text>
+      <input name='user_address' type='text' style='background-color: #EEE;'></input>
+    </view>
+    <switch name='remember' type='checkbox'>记录密码免于下次登录输入</switch>
+    <text wx:if="{{showPwdError}}" style='color: red;'>密码错误!</text>
+    <view style='display:flex; flex-direction: row; margin-top: 20rpx;'>
+      <button form-type='submit'>提交</button>
+      <button form-type='reset'>重置</button>
+    </view>
+  </view>
+</form>

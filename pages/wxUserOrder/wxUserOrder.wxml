@@ -1,0 +1,2 @@
+<!--pages/wxUserOrder/wxUserOrder.wxml-->
+<text>欢迎你,{{user_name}}</text>

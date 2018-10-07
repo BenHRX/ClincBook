@@ -2,7 +2,6 @@ const util = require('../../utils/util.js');
 
 // var tmpDutyStatus = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var tmpDutyStatus = Array(21);
-tmpDutyStatus.fill("0");
 
 var global_data = getApp().globalData;
 
@@ -43,6 +42,7 @@ Page({
       doctor_id: options.userid,
       background_picture: global_data.g_base_image_url + "background/BackImage.png",
     });
+    tmpDutyStatus.fill("0");
     this.formatCalendar();
     this.loadServerDutyData();
   },
@@ -58,7 +58,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
   },
 
   /**
@@ -355,6 +354,16 @@ Page({
     if (event.currentTarget.dataset.duty !== 1) {
       return;
     }
+
+    // Get today date and the click date.
+    var interval = event.currentTarget.dataset.num - this.data.today_weekday;
+    var curentClickDate = this.DateInFormat(this.calcFullFormatDate(new Date().valueOf(), interval, 'Increase'));
+    console.log("Current Click Date :" + curentClickDate);
+    this.setData({
+      "curentClickDate": curentClickDate,
+    });
+    
+    // Get the chosen date valid time.
     var time_slot = this.data.duty_array_timeSlot[event.currentTarget.dataset.num];
     var chosen_duty_arrangement = [];
     for (var key in time_slot) {
@@ -376,6 +385,26 @@ Page({
     this.setData({
       clickTimeID: event.currentTarget.dataset.idx,
     });
+    let time_slot = event.currentTarget.dataset.value;
+    // wx.redirectTo({
+    //   url: '/pages/wxUserLogin/wxUserLogin',
+    // });
+    wx.setStorage({
+      key: 'order_submit_data',
+      data: {
+        'order_gen': true,
+        'doctor_id': this.data.doctor_id,
+        'doctor_name' : this.data.doctor_name,
+        'hospital': this.data.doctor_hospital,
+        'department': this.data.doctor_department,
+        'book_date': this.data.curentClickDate,
+        'book_time': time_slot,
+        'order_time': Date.now(),
+      },
+    });
+    wx.reLaunch({
+      url: '/pages/wxUserLogin/wxUserLogin',
+    }); 
   },
 
 

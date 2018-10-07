@@ -51,11 +51,12 @@ page{
 .ClinicServiceTimeSlot{
   display: flex;
   flex-direction: column;
-  margin-left: 10rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
   padding: 10rpx 10rpx 10rpx 10rpx;
 }
 .BookingTimeContainer{
-  margin-top: 10rpx;
+  margin-top: 20rpx;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

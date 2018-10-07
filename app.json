@@ -6,6 +6,8 @@
     "pages/ClincDetail/ClincDetail",
     "pages/Map/MapController",
     "pages/DoctorDetail/DoctorDetail",
+    "pages/wxUserLogin/wxUserLogin",
+    "pages/wxUserOrder/wxUserOrder",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -32,6 +34,12 @@
         "iconPath": "image/icon/icon_book.png",
         "selectedIconPath": "image/icon/icon_book.png",
         "text": "预约就诊"
+      },
+      {
+        "pagePath": "pages/wxUserOrder/wxUserOrder",
+        "iconPath": "image/icon/icon_book.png",
+        "selectedIconPath": "image/icon/icon_book.png",
+        "text": "个人信息"
       }
     ]
   }
